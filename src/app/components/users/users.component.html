@@ -1,0 +1,16 @@
+<section>
+  <form #form="ngForm" (ngSubmit)="addBook(form.value)">
+    <input type="text" name="author" ngModel placeholder="author" />
+    <input type="text" name="genre" ngModel placeholder="genre" />
+    <input type="text" name="name" ngModel placeholder="name" />
+    <input type="number" name="price" ngModel placeholder="price" />
+    <button type="submit">Save Data</button>
+  </form>
+
+  <h1>Books</h1>
+  <ul>
+    <li *ngFor="let book of books$ | async">
+      {{ book.author }} / {{ book.genre }} / {{ book.name }} / {{ book.price }}€
+    </li>
+  </ul>
+</section>
